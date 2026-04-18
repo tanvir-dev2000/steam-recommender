@@ -1091,7 +1091,7 @@ function renderHistoryTable(uid,page){
   const rows=slice.map((r,i)=>{
     const pct=Math.min(100,(r.hours/maxHours)*100);
     const thumb=r.img?`<img class="history-thumb" src="${r.img}" alt="" onerror="this.style.display='none'">`:`<div class="history-thumb"></div>`;
-    const dots=Array.from({length:5},(_,k)=>`<div class="rating-dot${k<r.rating?' filled':''}"></div>`).join('');
+    const dots=Array.from({length:5},(_,k)=>`<svg viewBox="0 0 14 14" style="width:13px;height:13px;"><polygon points="7,1 8.8,5.3 13.5,5.7 10.1,8.7 11.1,13.3 7,10.8 2.9,13.3 3.9,8.7 0.5,5.7 5.2,5.3" fill="${k<r.rating?'#f5a623':'#2a2e3d'}"/></svg>`).join('');
     const hrs=r.hours>=1000?(r.hours/1000).toFixed(1)+'k':r.hours;
     return `<tr onclick="openModal('${r.game.replace(/'/g,"\\'").replace(/\\/g,'\\\\')}',null)">
       <td style="width:32px;color:var(--text3);font-size:12px;">${i+1}</td>
