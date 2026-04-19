@@ -25,10 +25,10 @@ function goTo(page) {
 async function loadData() {
   try {
     const [mR, rR, hR, sR] = await Promise.all([
-      fetch('docs/games_metadata.json'),
-      fetch('docs/recommendations.json'),
-      fetch('docs/play_history.json'),
-      fetch('docs/item_sim.json')
+      fetch('games_metadata.json'),
+      fetch('recommendations.json'),
+      fetch('play_history.json'),
+      fetch('item_sim.json')
     ]);
     GAMES_META = await mR.json();
     RECS = await rR.json();
